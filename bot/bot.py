@@ -208,7 +208,7 @@ async def message_handle(update: Update, context: CallbackContext, message=None,
         return
 
     user_name = db.get_user_attribute(user_id, "first_name")
-    _message+=f"Remember my name is {user_name}. Aswer to my name."
+    _message+=f"\nRemember my name is {user_name}. Aswer to my name."
 
     async def message_handle_fn():
         # new dialog timeout
