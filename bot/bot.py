@@ -207,6 +207,9 @@ async def message_handle(update: Update, context: CallbackContext, message=None,
         await generate_image_handle(update, context, message=message)
         return
 
+    user_name = db.get_user_attribute(user_id, "first_name")
+    _message+=f"Remember my name is {user_name}. Aswer to my name."
+
     async def message_handle_fn():
         # new dialog timeout
         if use_new_dialog_timeout:
